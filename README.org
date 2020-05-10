@@ -1,8 +1,8 @@
 * Generational Indices                                             :TOC_5_gh:
   - [[#intro][Intro]]
-  - [[#documentation][Documentation]]
   - [[#design][Design]]
     - [[#index-and-generation-numbers][Index and Generation numbers]]
+  - [[#examples][Examples]]
 
 ** Intro
    This is a crate under the rubric of "do one thing very well".
@@ -13,7 +13,6 @@
 
    Later on, we will provide something that will implement something
    for vectors at a later date.
-** Documentation
 ** Design
    In Rust, especially in game development, but in other
    areas, it is better to use a entity approach rather
@@ -37,4 +36,28 @@
     The new index is always monitically increasing; it shall 
     never be reset. The same is true with the generation
     numbers.
-  
+** Examples
+   #+begin_src rust
+   extern crate gen_indices;
+   extern crate num;
+ 
+   use gen_indices::*;
+   use num::{Num, zero, one};
+
+   let gi = GenIndexEntitySet::<u64, u64>::new();
+
+   // first index
+   let idx1 = gi.lock().unwrap().next_index();
+   println!("first: {:?}", idx1);
+
+   // second index
+   let idx2 = gi.lock().unwrap().next_index();
+   println!("first: {:?}", idx2);
+
+   // delete first index and then get next index
+   if let Err(e) = gi.lock().unwrap().delete_index(idx1) {
+     println!("Error: {}", e);
+   }
+   let idx3 = gi.lock().unwrap().next_index();
+   println!("first: {:?}", idx3);
+   #+end_src
