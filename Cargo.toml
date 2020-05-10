@@ -8,7 +8,7 @@ description = "Generational Indices -- a simple yet robust Geneerational Index f
 homepage = "https://github.com/flajann2/gen-indices"
 repository = "https://github.com/flajann2/gen-indices" 
 readme = "MD.md"
-keywords = ["data-driven", "entity", "ECS", "index", "generational", "generation", "gamedev", "zuse"]
+keywords = ["data-driven", "entity", "ECS", "index", "generational"]
 
 [dependencies]
 num = "0.2.1"
