@@ -1,0 +1,14 @@
+[package]
+name = "gen_indices"
+version = "0.0.0"
+authors = ["Fred Mitchell <fred.mitchell@gmx.de>"]
+edition = "2018"
+license = "MIT"
+description = "Generational Indices -- a simple yet robust Geneerational Index for use with data-driven entity-based designs."
+homepage = "https://github.com/flajann2/gen-indices"
+repository = "https://github.com/flajann2/gen-indices" 
+readme = "MD.md"
+keywords = ["data driven", "entity", "ECS", "index", "generational", "generation", "gamedev", "zuse"]
+
+[dependencies]
+num = "0.2.1"
